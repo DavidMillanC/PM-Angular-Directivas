@@ -1,0 +1,73 @@
+<!--NGIF-->
+<h1 class="container bg-dark text-white text-center my-3 py-3">
+  A continuación explicación del ngIf
+</h1>
+<h1 class="container bg-dark text-white text-center my-4 py-4">
+  ngIf show={{ show }} Tema
+</h1>
+<div class="container">
+  <button class="btn btn-warning" (click)="show = !show">Acción</button>
+  <p class="text-danger" *ngIf="show">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+    repudiandae, repellendus cum doloremque exercitationem aspernatur numquam
+    perspiciatis? Aut voluptates repellat officia, cupiditate alias est ratione
+    minima officiis. Reiciendis, harum eius!
+  </p>
+  <p class="text-info">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias saepe
+    quas atque eligendi nesciunt corrupti esse quisquam autem neque aut fuga
+    numquam in facilis voluptatibus eveniet, nemo quidem optio veritatis!
+  </p>
+</div>
+
+<!--NGFOR-->
+<h1 class="container bg-dark text-white text-center my-3 py-3">[ngFor]</h1>
+<div class="container">
+  <ul>
+    <li *ngFor="let curso of cursos">{{ curso }}</li>
+  </ul>
+  <table class="table"></table>
+</div>
+
+<!--NGSWITCH-->
+<h1 class="container bg-dark text-white text-center my-3 py-3">ngSwitch</h1>
+<div [ngSwitch]="lightStatus">
+  <div *ngSwitchCase="'GREEN'">VERDE</div>
+  <div *ngSwitchCase="'RED'">ROJO</div>
+  <div *ngSwitchCase="'YELLOW'">AMARILLO</div>
+  <div *ngSwitchDefault>ROTO</div>
+</div>
+
+<!--NGCLASS-->
+<h1 class="container bg-dark text-white text-center my-3 py-3">[ngClass]</h1>
+<div class="container">
+  <button class="btn btn-dark mb-3" (click)="fondo = 'bg-dark'">Primero</button>
+  <button class="btn btn-danger mb-3" (click)="fondo = 'bg-danger'">
+    Segundo
+  </button>
+
+  <p class="text-info" [ngClass]="fondo">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+    repudiandae, repellendus cum doloremque exercitationem aspernatur numquam
+    perspiciatis? Aut voluptates repellat officia, cupiditate alias est ratione
+    minima officiis. Reiciendis, harum eius!
+  </p>
+  <p class="text-danger">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias saepe
+    quas atque eligendi nesciunt corrupti esse quisquam autem neque aut fuga
+    numquam in facilis voluptatibus eveniet, nemo quidem optio veritatis!
+  </p>
+</div>
+
+<!--NGSTYLE-->
+<h1 class="container bg-dark text-white text-center my-3 py-3">[ngStyle]</h1>
+<div [ngStyle]="{ color: 'white', 'background-color': 'black' }">
+  Estamos probando la directiva ngStyle
+</div>
+
+<!--NGPLURAL-->
+<h1 class="container bg-dark text-white text-center my-3 py-3">[ngPlural]</h1>
+<some-element [ngPlural]="value">
+  <ng-template ngPluralCase="0"> Ningún valor</ng-template>
+  <ng-template ngPluralCase="2"> Si hay valor</ng-template>
+</some-element>
